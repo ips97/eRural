@@ -14,5 +14,5 @@
 
 
 ## Como fazer funcionar
-- Para inicializar o projeto, é necessário fazer o download do projeto e abrir no terminal o diretório do projeto e digitar "npm start" ou "node index" ou "node inde.js", que o servidor irá inicializar.
+- Para inicializar o projeto, é necessário fazer o download do projeto, verificar os requisitos para inicialização do sistema e abrir no terminal o diretório do projeto e digitar "npm start" ou "node index" ou "node inde.js", que o servidor irá inicializar.
 - Para acessar o sistema no navegador é necessário acessar a url: http://localhost:3000/ , e o sistema irá acessar o servidor local e abrir a aplicação.
