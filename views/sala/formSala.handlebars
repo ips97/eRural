@@ -1,0 +1,17 @@
+<br>
+
+<h3>Nova Sala:</h3>
+<section class="container card">
+
+    <form class="card-body" method="post" action="/salas/addSala" enctype="multipart/form-data">
+        <label for="nomeSala" >Nome da Sala:</label>
+        <input type="text" class="form-control" name="nomeSala" required placeholder="Insira o nome da Sala" value="{{body.nomeSala}}">
+        <br>
+        <label for="file">Selecione o vídeo a ser exibido: </label>
+        <input type="file" name="file" class="form-control" required>
+        <p>- Formato permitido: mp4, webm, ogg <br>
+           - Limite de tamanho: 100MB</p>
+        <br>
+        <button type="submit" class="btn btn-success">Criar Sala</button>
+    </form>
+</section>

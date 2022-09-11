@@ -1,0 +1,40 @@
+<h1>Salas disponíveis</h1>
+<hr>
+<a href="/salas/addSala" class="btn btn-success">Nova Sala</a>
+
+<br>
+<br>
+<br>
+<br>
+
+ {{#each sala}}
+      <a style="text-decoration: none; color:black" href="/sala/{{_id}}">
+      <section class="card aula">
+          <article class="card-body">
+            
+              <p><strong>Sala:</strong> {{nome}}</p>
+
+          </article>
+        </section> 
+        </a> 
+        <br>   
+{{else}}
+            <h4 class="mt-3">Nenhuma Sala Encontrada</h4>
+{{/each}}
+
+
+
+
+
+<script type="text/javascript">
+
+  
+room = document.querySelector("#sala").value
+
+  socket.emit("select_room", {room, username})
+
+  
+    
+
+    
+</script>

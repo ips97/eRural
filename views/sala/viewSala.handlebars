@@ -1,0 +1,53 @@
+<h3>Sala {{sala.nome}}</h3>
+<hr>
+<br>
+
+<section class="container card mt-4">
+        <article class="card-body">
+            <p><strong>Nome da Sala:</strong> {{sala.nome}}</p>
+            <input type="hidden" id="sala" value="{{sala._id}}">
+            <video width="900px" src="http://localhost:3000/video/i/{{sala.file.key}}" autoplay controls></video>
+
+        </article> 
+</section>
+<div id="user_on">
+        
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script type="text/javascript">
+
+  const socket = io();
+const divUser = document.querySelector("#user_on")
+  let username = null;
+    let room = document.querySelector("#sala").value
+
+    socket.on("update_user", (messages)=>{
+    updateUserOnScreen(messages)
+    })
+
+   if(!username || !username == null || !username == ""){
+        username = prompt("Insira seu nome");
+        
+   }
+    
+  
+  
+
+  socket.emit("select_room", {room, username})
+
+
+    function updateUserOnScreen(messages){
+        
+
+    let listUser = `<h5>Usuários On-Line: ${messages.length}</h5> `
+        messages.forEach(message =>{
+        listUser += `<p>${message.username}</p>`
+    })
+    divUser.innerHTML = listUser
+  
+    }
+
+    
+</script>
+
